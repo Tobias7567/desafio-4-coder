@@ -13,7 +13,7 @@ class Conteiner {
         await fs.promises.writeFile(
           this.ruta,
           JSON.stringify(
-            [...dataParse, { ...obj, id: dataParse.length + 1 }],
+            [...dataParse, { ...obj, id: dataParse[dataParse.length - 1].id + 1 }],
             null,
             2
           )
@@ -80,10 +80,11 @@ class Conteiner {
   async deleteForId(id) {
     try {
       let data = await fs.promises.readFile(this.ruta, "utf-8");
-      let dataParse = await JSON.parse(data);
-      let producto = dataParse.find((producto) => producto.id === id);
+      let dataPars =  JSON.parse(data);
+      let producto = dataPars.find((producto) => producto.id === id);
       if (producto) {
-        const dataParseFilter = dataParse.filter((produc) => produc.id !== id);
+
+        const dataParseFilter = dataPars.filter((produc) => produc.id !== id);
         await fs.promises.writeFile(
           this.ruta,
           JSON.stringify(dataParseFilter, null, 2),
@@ -97,32 +98,8 @@ class Conteiner {
       console.log(error);
     }
   }
-  async Read() {
-    try {
-      let data = await fs.promises.readFile(this.ruta, "utf-8");
-      let dataParse = JSON.parse(data);
-      return dataParse;
-    } catch (error) {
-      console.log(error);
-    }
-  }
-  async readRamdom() {
-    try {
-      let data = await fs.promises.readFile(this.ruta, "utf-8");
-      let dataParse = JSON.parse(data);
-      let max = dataParse.length;
-      let min = 0;
-      let id = Math.ceil(Math.random() * (max - min));
-      console.log(id);
-      let producto = dataParse.find((producto) => producto.id === id);
-      if (producto) {
-        return producto;
-      } else {
-        console.log("archivo no encontrado");
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  }
+
+
 }
 module.exports = Conteiner;
+
