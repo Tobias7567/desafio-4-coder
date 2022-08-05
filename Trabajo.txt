@@ -1,0 +1,26 @@
+[
+  {
+    "id": 2,
+    "name": "negroni",
+    "price": "500",
+    "url": "/img/2"
+  },
+  {
+    "name": "mojito",
+    "price": "400",
+    "url": "/img3",
+    "id": 2
+  },
+  {
+    "name": "mojito",
+    "price": "500",
+    "url": "/img3",
+    "id": 3
+  },
+  {
+    "name": "mojito",
+    "price": "600",
+    "url": "/img3",
+    "id": 4
+  }
+]
