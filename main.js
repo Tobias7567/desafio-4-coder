@@ -26,6 +26,21 @@ routerProductos.get("/", async (req, res) => {
   }
  
 });
+routerProductos.delete("/:id", (req, res) => {
+  try {
+  const {id} = req.params;
+  idParse = parseInt(id)
+  console.log(idParse)
+  conteiner.deleteForId(idParse)
+  res.json({
+    mensaje : "borrado con exito "
+  })
+
+  } catch (error) {
+    console.log(error)
+  }
+ 
+});
 
 routerProductos.post("/", (req, res) => {
   try {
@@ -61,3 +76,4 @@ const server = app.listen(PORT, () => {
   console.log(`some text ${server.address().port}`);
 });
 server.on("error", (err) => console.log(err));
+
