@@ -1,26 +1,20 @@
 [
   {
-    "id": 2,
-    "name": "negroni",
+    "name": "gin",
     "price": "500",
-    "url": "/img/2"
+    "url": "",
+    "id": 1
   },
   {
-    "name": "mojito",
-    "price": "400",
+    "name": "negroni",
+    "price": "33",
     "url": "/img3",
     "id": 2
   },
   {
     "name": "mojito",
-    "price": "500",
+    "price": "900",
     "url": "/img3",
     "id": 3
-  },
-  {
-    "name": "mojito",
-    "price": "600",
-    "url": "/img3",
-    "id": 4
   }
 ]
